@@ -1,5 +1,6 @@
-package mekins.noughtsandcrosses;
+package com.greenvaultgames.noughtsandcrosses;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -33,5 +34,31 @@ public class GoogleSignInForm extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         //
+    }
+
+    // Call when the sign-in button is clicked
+    private void signInClicked() {
+        Activity mainActivity = getActivity();
+        SignInCoordinator coordinator = (SignInCoordinator) mainActivity;
+
+        coordinator.onSignInClicked();
+    }
+
+    // Call when the sign-out button is clicked
+    private void signOutclicked() {
+        Activity mainActivity = getActivity();
+        SignInCoordinator coordinator = (SignInCoordinator) mainActivity;
+
+        coordinator.onSignOutClicked();
+    }
+
+    public void ShowLogoutButton() {
+        //Hide login button
+        //Show logout button
+    }
+
+    public void ShowLoginButton() {
+        //Hide logout button
+        //Show login button
     }
 }
